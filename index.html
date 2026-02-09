@@ -92,6 +92,13 @@ button:disabled {
   width: 100%;
   background: rgba(0,0,0,0.4);
 }
+.back span {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: pre-line;
+}
+
 
 .back {
   background: rgba(0,0,0,0.7);
@@ -169,13 +176,21 @@ audio { display:none; }
     <div class="card" onclick="flip(this,'p2')">
       <div class="inner">
         <div class="front"><img src="photo1.jpg"></div>
-        <div class="back">Tum meri zindagi ka sabse khoobsurat hissa ho ❤️</div>
-      </div>
+          <div class="back" 
+            data-text="Tum meri zindagi ka sabse khoobsurat hissa ho ❤️"
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
+      </div>    
     </div>
     <div class="card" onclick="flip(this,'p2')">
       <div class="inner">
         <div class="front"><img src="photo2.jpg"></div>
-        <div class="back">Tumhare saath har pal special lagta hai ✨</div>
+          <div class="back" 
+            data-text="Tumhare saath har pal special lagta hai ✨<"
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
       </div>
     </div>
   </div>
@@ -188,13 +203,21 @@ audio { display:none; }
     <div class="card" onclick="flip(this,'p3')">
       <div class="inner">
         <div class="front"><img src="photo3.jpg"></div>
-        <div class="back">Tumhari khusi sb kuch hai 🌙</div>
+          <div class="back" 
+            data-text="Tumhari khusi sb kuch hai 🌙"
+            data-color="#ffd166">
+            <span></span>
+          </div>
       </div>
     </div>
     <div class="card" onclick="flip(this,'p3')">
       <div class="inner">
         <div class="front"><img src="photo4.jpg"></div>
-        <div class="back">Tum saath ho toh sab kuch aasaan lagta hai 💕</div>
+          <div class="back" 
+            data-text="Tum saath ho toh sab kuch aasaan lagta hai 💕"
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
       </div>
     </div>
   </div>
@@ -207,14 +230,22 @@ audio { display:none; }
     <div class="card" onclick="flip(this,'p4')">
       <div class="inner">
         <div class="front"><img src="photo5.jpg"></div>
-        <div class="back">Ful jesi ho gulab lagti ho <br>
-                          Haste Huye Lajavab Lagti ho</div>
+          <div class="back" 
+            data-text="Ful jesi ho gulab lagti ho ️❤
+                          Haste Huye Lajavab Lagti ho ❤"
+            data-color="#cdb4db">
+            <span></span>
+          </div>
       </div>
     </div>
     <div class="card" onclick="flip(this,'p4')">
       <div class="inner">
         <div class="front"><img src="photo6.jpg"></div>
-        <div class="back">💕Always keep Smilling </div>
+          <div class="back" 
+            data-text="💕Always keep Smilling ❤️"
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
       </div>
     </div>
   </div>
@@ -228,13 +259,21 @@ audio { display:none; }
     <div class="card" onclick="flip(this,'p5')">
       <div class="inner">
         <div class="front"><img src="photo7.jpg"></div>
-        <div class="back">tum syd kabhi smjhogi </div>
+          <div class="back" 
+            data-text="Tum syd kabhi smjh Pao ❤️"
+            data-color="#bde0fe">
+            <span></span>
+          </div>
       </div>
     </div>
     <div class="card" onclick="flip(this,'p5')">
       <div class="inner">
         <div class="front"><img src="photo8.jpg"></div>
-        <div class="back">💕tumahra tha or rhunga bhi 💕</div>
+          <div class="back" 
+            data-text="💕tumahra tha or rhunga bhi 💕"
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
       </div>
     </div>
   </div>
@@ -248,7 +287,11 @@ audio { display:none; }
     <div class="card" onclick="flip(this,'p6')">
       <div class="inner">
         <div class="front"><img src="photo9.jpg"></div>
-        <div class="back">Har yaad mein sirf tum ho ❤️</div>
+          <div class="back" 
+            data-text="Har yaad mein sirf tum ho ❤️"
+            data-color="#ffc8dd">
+            <span></span>
+          </div>
       </div>
     </div>
     <div class="card" onclick="flip(this,'p6')">
@@ -257,11 +300,14 @@ audio { display:none; }
           <img src="photo10.jpg">
           <p>Your Memories ❤️</p>
         </div>
-        <div class="back">
-          Tumse kitna pyaar hai, yeh sirf kehne se jata nahi skta<br>
-          main tumhe har baat samjha nahi sakta,<br>
-          aur shayad meri khamoshi tum kabhi smjh nh skti.
-        </div>
+          <div class="back" 
+            data-text="
+          Tumse kitna pyaar hai, yeh sirf kehne se jata nahi skta
+          main tumhe har baat samjha nahi sakta,
+          aur shayad meri khamoshi tum kabhi smjh nh skti."
+            data-color="#ffb3c6">
+            <span></span>
+          </div>
       </div>
     </div>
   </div>
@@ -371,6 +417,24 @@ noBtn.onclick = () => {
 const flipped = {};
 
 function flip(card, pageId) {
+  if (card.classList.contains("clicked")) return;
+
+
+  const back = card.querySelector(".back");
+  const span = back.querySelector("span");
+  const text = back.dataset.text;
+  const color = back.dataset.color || "#ffd1dc";
+
+  span.textContent = "";
+  span.style.color = color;
+
+  let i = 0;
+  const interval = setInterval(() => {
+    span.textContent += text[i];
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, 35);
+  
   card.classList.toggle("clicked");
   flipped[pageId] = flipped[pageId] ? flipped[pageId] + 1 : 1;
 
@@ -379,6 +443,7 @@ function flip(card, pageId) {
     if (btn) btn.disabled = false;
   }
 }
+
 
 
 /* HEART DROP */
