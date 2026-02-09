@@ -58,10 +58,12 @@ button:disabled {
   width: 100%;
 }
 
-.card { perspective: 1000px; }
+.card { perspective: 1000px;
+       height: 60vh;  
+}
 
 .inner {
-  height: 260px;
+  height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
   position: relative;
@@ -97,7 +99,11 @@ button:disabled {
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
-  white-space: pre-line;
+  white-space: pre-line; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* always centered */
 }
 
 
