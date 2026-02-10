@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>My Valentine ❤️</title>
+<title>Duck ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -96,14 +96,14 @@ audio{display:none}
 
 <!-- PASSWORD PAGE -->
 <div class="page active" id="p0">
-  <h2> A Small Surprise for you 🦆</h2>
+  <h2> A Small things for you 🦆</h2>
   <input type="password" id="pass" placeholder="Enter password">
   <button onclick="unlock()">Unlock ❤️</button>
 </div>
 
 <!-- VALENTINE PAGE -->
 <div class="page" id="p1">
-  <h1>Will you be my Forever? 💖</h1>
+  <h1>Do you want to check? 💖</h1>
   <p id="noText"></p>
   <div class="button-row">
     <button id="yesBtn">YES ❤️</button>
@@ -116,7 +116,7 @@ audio{display:none}
   <div class="card" onclick="flip(this,'p2')">
     <div class="inner">
       <div class="front"><img src="photo1.jpg"></div>
-      <div class="back" data-text="Tum meri zindagi ka sabse khoobsurat hissa thi ❤️"><span></span></div>
+      <div class="back" data-text="Tu meri zindagi ka sabse khoobsurat hissa thi ❤️"><span></span></div>
     </div>
   </div>
   <button disabled onclick="go(3)">Next❤️</button>
@@ -197,18 +197,20 @@ audio{display:none}
     <div class="inner">
       <div class="front"><img src="photo9.jpg"></div>
       <div class="back" data-text="Har pal mein sirf tu h ❤️
+                                  Mujhe pta he tu yad to nh kregi kabhi fir bhi..
+        
                                   jb tu phnegi saree or syd yad aaye to yad mt krna ❤️
-                                  jb kabhi phne blue dress or syd yad aaye to yad mt krna ❤️
+                                  jb kabhi phne 1 shot dress or syd yad aaye to yad mt krna ❤️
+                                  Jab kabhi khayal aaye mera, toh hmesha has kr batana ❤️
                                   kabhi jikr kre koi mera to khud ko accha or mujhe bura batna ❤️"><span></span></div>
     </div>
   </div>
   <button disabled onclick="go(11)">Next 🌙</button>
 </div>
-
 <div class="page" id="p11">
   <div class="card" onclick="flip(this,'p11')">
     <div class="inner">
-      <div class="front"><img src="photo10.jpg"><p>Your Memories ❤️</p></div>
+      <div class="front"><img src="photo10.jpg"></div>
       <div class="back" data-text="kitna pyaar hai, yeh jata nh skta ,, tu smjh nhi skti or ab me smjha nh skta"><span></span></div>
     </div>
   </div>
@@ -217,16 +219,17 @@ audio{display:none}
 
 <!-- THANK YOU PAGE -->
 <div class="page" id="p12">
-  <h2>🌙 Thank you for staying</h2>
+  <h2> Thank you for staying </h2>
   <p>
     Chahe hum baat kare ya na kare,<br>
-    tumhari jagah meri zindagi mein<br>
-    hamesha rahegi 🤍
+    tu meri zindagi mein<br>
+    hamesha rahegi 🤍<br>
+    Kabhi jrurat pde to yad kr lena me hmesha rhunga tera ❤️ 
   </p>
 </div>
 
 <script>
-const PASSWORD="15082004";
+const PASSWORD="11082025";
 const pages=document.querySelectorAll(".page");
 const music=document.getElementById("bgMusic");
 const noText=document.getElementById("noText");
@@ -255,14 +258,14 @@ function go(n){
 yesBtn.onclick=()=>go(2);
 
 const messages=[
-  "Please ek baar aur soch le🥺",
-  "Dil mat todo, Dargah chlegi",
+  "Ek baar dekh to le Gawar",
+  "Dargah chlegi",
   "dekh kr delete kr dena 🤣",
   "Bas ek YES or 50+ Mark's 🌸",
   "Signature wali pic bhi nh h🤣",
   "Jyada Vakil mt bn 🤣",
   "exam nh h , jo option milenge 😀",
-  "Gawar, sb check kena h",
+  "Gawar, sb check krna h",
   "Friends 🤝 💓",
   "Anpadh open krne ke liye to kr"
 ];
